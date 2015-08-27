@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ServerConfig xmlns="http://servers">
+  <environments>
+    <!-- Integration -->
+    <environment name="integration">
+      <services>
+        <!-- Userstore -->
+        <service name="userstore">
+          <nodes>
+            <node host="slvdclvcad51.nfcutest.net" port="10389" usessl="false" datacenter="vienna"/>
+            <node host="slvdclvcad52.nfcutest.net" port="10389" usessl="false" datacenter="vienna"/>
+          </nodes>
+          <vip host="test-ldap.nfcutest.net" port="389" usessl="false" datacenter="any"/>
+        </service>
+        <!-- Imps -->
+        <service name="imps">
+          <nodes>
+            <node host="swvdcivcap04.nfcu.net" port="20389" usessl="false" datacenter="vienna"/>
+            <node host="swvdcivcap05.nfcu.net" port="20389" usessl="false" datacenter="vienna"/>
+          </nodes>
+          <vip host="test-prov.nfcutest.net:" port="20389" usessl="false" datacenter="any"/>
+        </service>
+      </services>
+    </environment>
+
+    <!-- Production -->
+    <environment name="production">
+      <services>
+        <!-- Userstore -->
+        <service name="userstore">
+          <nodes>
+            <node host="slvdclvcad51.nfcutest.net" port="10389" usessl="false" datacenter="vienna"/>
+            <node host="slvdclvcad51.nfcutest.net" port="10389" usessl="false" datacenter="winchester"/>
+          </nodes>
+          <vip host="test-ldap.nfcutest.net" port="389" usessl="false" datacenter="any"/>
+        </service>
+      </services>
+    </environment>
+  </environments>
+</ServerConfig>
